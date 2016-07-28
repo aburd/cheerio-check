@@ -37,7 +37,10 @@ Promise.each(urlsPromises, (resObj, iterator) => { //using each will make sure e
   var reg = new RegExp('2016年7月')
   var months = $('.new-location .txt-14').text()
   if( !reg.test(months) ) {
-    console.warn(i + '. Check failed at with text: ' + chalk.yellow(months) + '. \n' + spacer(i) + 'URL: ' + chalk.red(resObj.request.href) )
+    console.warn(i +
+      '. Check failed at with...\n'+ spacer(i) +
+      'Text: ' + chalk.yellow(months) + '. \n' + spacer(i) +
+      'URL: ' + chalk.red(resObj.request.href) )
     failuresCount++
   }
   else {
